@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <div class="container pt-5">
+    <div class="d-flex justify-content-center">
+      <h1 class="mt-5 border-bottom">Animal's Details</h1>
+    </div>
+  </div>
+
+<br>
+
+  <div class="d-flex justify-content-center">
+    <div>
+      <!-- image goes here -->
+    </div>
+    <div class ="d-flex justify-content-between flex-column pb-3">
+      <h2 class="border-bottom"><%= @animal.name %></h2>
+      <div>
+        <ul>
+          <li>Category: <%= @animal.category %></li>
+          <li>Birth Date: <%= @animal.birth_date %></li>
+        </ul>
+      </div>
+      <div>
+        <%= link_to "Edit animal", edit_animal_path, class: "btn btn-primary" %>
+        <%= link_to "Back to animals", animals_path, class: "btn btn-primary" %>
+        <%= link_to "Delete animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
