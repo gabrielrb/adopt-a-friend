@@ -1,5 +1,6 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: :show
+  before_action :set_animal, only: [:show, :edit, :update]
+
   def index
     @animals = Animal.all
   end
@@ -16,6 +17,16 @@ class AnimalsController < ApplicationController
       redirect_to animal_path(@animal), notice: 'animal was successfully created'
     else
       render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @animal.update(animal_params)
+      redirect_to animal_path(@animal), notice: 'animal was successfully updated'
+    else
+      render :edit
     end
   end
 

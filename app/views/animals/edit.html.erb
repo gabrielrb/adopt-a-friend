@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-start">
+    <h1 class="pt-5">Edit animal's information</h1>
+  </div>
+
+  <br>
+
+  <div>
+    <%= simple_form_for(@animal) do |f| %>
+      <%= f.input :name, label: 'Name' %>
+      <%= f.input :category, label: 'Category', collection: ['dog', 'cat', 'other'] %>
+      <%= f.input :birth_date, label: 'Birth Date' %>
+      <div class="mb-5">
+        <%= f.submit 'Update', class: 'btn btn-primary' %>
+        <%= link_to "Back to animals list", animal_path(@animal), class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
