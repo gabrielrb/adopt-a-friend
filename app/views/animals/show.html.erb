@@ -26,7 +26,7 @@
         <div class="mt-4">
           <h2 class="border-bottom"> Owner: <%= @animal.adoption.owner_name %></h2>
           <ul>
-            <li> <strong>Adoption Date:</strong> <%= @animal.adoption.created_at %></li>
+            <li> <strong>Adoption Date:</strong> <%= @animal.adoption.created_at.strftime("%Y-%m-%d") %></li>
           </ul>
         </div>
       <% else %>
