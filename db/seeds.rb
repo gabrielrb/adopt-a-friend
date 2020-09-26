@@ -10,13 +10,13 @@ Animal.destroy_all
 3.times do
   animal = Animal.new(name: Faker::Creature::Cat.name,
                       birth_date: Faker::Date.between(from: '2014-09-23', to: '2019-09-25'),
-                      type: 'cat')
+                      category: 'cat')
   animal.save!
 end
 
 3.times do
   animal = Animal.new(name: Faker::Creature::Dog.name,
                       birth_date: Faker::Date.between(from: '2014-09-23', to: '2019-09-25'),
-                      type: 'dog')
+                      category: 'dog')
   animal.save!
 end

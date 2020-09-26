@@ -3,9 +3,9 @@
 one:
   name: MyString
   birth_date: MyString
-  type: 
+  category:
 
 two:
   name: MyString
   birth_date: MyString
-  type: 
+  category:
