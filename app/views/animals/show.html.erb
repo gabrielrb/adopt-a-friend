@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <div class="container pt-5">
+    <div class="d-flex justify-content-center">
+      <h1 class="mt-5">Animal's Details</h1>
+    </div>
+  </div>
+
+<br>
+
+  <div class="d-flex justify-content-center">
+    <div>
+      <!-- image goes here -->
+    </div>
+    <div class ="d-flex justify-content-between flex-column pb-3">
+      <h2><%= @animal.name %></h2>
+      <div>
+        <p>Category: <%= @animal.category %></p>
+        <p>Birth Date: <%= @animal.birth_date %></p>
+      </div>
+    </div>
+  </div>
+</div>

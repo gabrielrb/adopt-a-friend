@@ -16,6 +16,7 @@
               <h2 class="border-bottom"><%= animal.name %></h2>
               <p><strong>Categoria:</strong> <%= animal.category %></p>
               <p><strong>Professor:</strong> <%= animal.birth_date %></p>
+              <p><%= link_to "Detalhes", animal_path(animal), class: "btn btn-primary" %></p>
             </div>
           </div>
         <% end %>
