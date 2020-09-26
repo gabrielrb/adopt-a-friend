@@ -24,6 +24,11 @@
         <%= link_to "Back to animals", animals_path, class: "btn btn-primary" %>
         <%= link_to "Delete animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
       </div>
+
+        <div class="mt-4">
+          <%= render 'adoptions/new', animal: @animal, adoption: @adoption %>
+        </div>
+
     </div>
   </div>
 </div>

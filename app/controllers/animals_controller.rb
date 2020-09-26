@@ -5,7 +5,9 @@ class AnimalsController < ApplicationController
     @animals = Animal.all
   end
 
-  def show; end
+  def show
+    @adoption = Adoption.new
+  end
 
   def new
     @animal = Animal.new
