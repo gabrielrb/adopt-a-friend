@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: [:show, :edit, :update]
+  before_action :set_animal, only: [:show, :edit, :update, :destroy]
 
   def index
     @animals = Animal.all
@@ -28,6 +28,11 @@ class AnimalsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @animal.destroy
+    redirect_to animals_path, notice: 'animal was successfully deleted'
   end
 
   private
