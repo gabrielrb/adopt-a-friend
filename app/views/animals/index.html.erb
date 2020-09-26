@@ -1,5 +1,25 @@
-<ul>
-  <% @animals.each do |animal| %>
-    <li><%= animal.name %></li>
-  <% end %>
-</ul>
+<div class="container mt-4">
+  <div class="container pt-5">
+    <div class="d-flex justify-content-center">
+      <h2 class="mt-5">Animais Disponíveis</h2>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <% if @animals.present? %>
+      <% @animals.each do |animal| %>
+        <% unless animal.adoption.present? %>
+          <div class="col-5 mb-3">
+            <!-- image goes here -->
+            <div>
+              <h2 class="border-bottom"><%= animal.name %></h2>
+              <p><strong>Categoria:</strong> <%= animal.category %></p>
+              <p><strong>Professor:</strong> <%= animal.birth_date %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
