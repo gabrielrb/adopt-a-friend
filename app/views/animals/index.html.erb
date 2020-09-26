@@ -5,7 +5,10 @@
     </div>
   </div>
   <br>
-
+  <div>
+    <%= link_to "New animal?", new_animal_path, class: "btn btn-secondary" %>
+  </div>
+  <br>
   <div class="row">
     <% if @animals.present? %>
       <% @animals.each do |animal| %>
