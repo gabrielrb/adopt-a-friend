@@ -9,7 +9,7 @@
 
   <div class="d-flex justify-content-center">
     <div>
-      <!-- image goes here -->
+      <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
     <div class ="d-flex justify-content-between flex-column pb-3">
       <h2 class="border-bottom"><%= @animal.name %></h2>

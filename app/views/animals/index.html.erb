@@ -14,7 +14,7 @@
       <% @animals.each do |animal| %>
         <% unless animal.adoption.present? %>
           <div class="col-5 mb-3">
-            <!-- image goes here -->
+            <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
             <div>
               <h2 class="border-bottom"><%= animal.name %></h2>
               <p><strong>Categoria:</strong> <%= animal.category %></p>
