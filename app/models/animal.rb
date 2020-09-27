@@ -3,8 +3,17 @@ class Animal < ApplicationRecord
   has_one_attached :photo
 
   extend FriendlyId
-  friendly_id :name
+  friendly_id :slug_candidates, use: :slugged
 
+  def slug_candidates
+    [
+      :name,
+      [:name, :category],
+      [:name, :category, :birth_date]
+    ]
+  end
+
+  validates :slug, presence: true
   validates :name, presence: true,
                    format: { with: /\A[a-z ]+\z/,
                              message: 'Only downcase letters without special character (whitespace allowed)' },
