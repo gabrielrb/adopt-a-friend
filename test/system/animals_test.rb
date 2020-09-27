@@ -36,7 +36,7 @@ class AnimalsTest < ApplicationSystemTestCase
   test "updating a animal's information" do
     visit '/animals/1/edit'
     # save_and_open_screenshot
-    fill_in 'Birth Date', with: '1900-01-01'
+    select 'other', from: 'Category'
     # save_and_open_screenshot
 
     click_on 'Update'
@@ -46,4 +46,18 @@ class AnimalsTest < ApplicationSystemTestCase
     assert_text "Animal's Details"
     # save_and_open_screenshot
   end
+
+
+
+  # test 'delete a animal' do
+  #   visit '/animals/4'
+  #   # save_and_open_screenshot
+
+  #   click_on 'Delete Animal'
+  #   # save_and_open_screenshot
+
+  #   assert_equal animals_path, page.current_path
+  #   assert_text 'Animals available'
+  #   # save_and_open_screenshot
+  # end
 end

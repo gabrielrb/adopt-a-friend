@@ -17,3 +17,15 @@ three:
   name: 'zequinha'
   birth_date: '2010-02-11'
   category: 'cat'
+
+four:
+  id: 4
+  name: 'juca'
+  birth_date: '2010-02-11'
+  category: 'dog'
+
+five:
+  id: 5
+  name: 'louro'
+  birth_date: '2010-02-11'
+  category: 'other'
