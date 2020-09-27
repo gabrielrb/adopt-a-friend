@@ -1,9 +1,9 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class AnimalsTest < ApplicationSystemTestCase
-  # test "visiting the index" do
-  #   visit animals_url
-  #
-  #   assert_selector "h1", text: "Animal"
-  # end
+  test 'visiting the index' do
+    visit '/'
+
+    assert_selector 'h2', text: 'Animals'
+  end
 end
