@@ -23,5 +23,4 @@ class Animal < ApplicationRecord
                                    message: 'Needs to follow the format: yyyy-mm-dd' }
   validates :category, presence: true,
                        format: { with: /\A(dog|cat|other)\z/, message: 'You need to choose between dog, cat or other.' }
-  validates :photo, presence: true
 end
