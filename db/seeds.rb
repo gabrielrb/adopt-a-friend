@@ -14,7 +14,7 @@ puts 'Start'
 3.times do
   sleep(1)
   file = URI.open('https://source.unsplash.com/300x300/?cat')
-  animal = Animal.new(name: Faker::Creature::Cat.name,
+  animal = Animal.new(name: Faker::Creature::Cat.name.downcase,
                       birth_date: Faker::Date.between(from: '2014-09-23', to: '2019-09-25'),
                       category: 'cat')
   animal.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -24,7 +24,7 @@ end
 3.times do
   sleep(1)
   file = URI.open('https://source.unsplash.com/300x300/?dog')
-  animal = Animal.new(name: Faker::Creature::Dog.name,
+  animal = Animal.new(name: Faker::Creature::Dog.name.downcase,
                       birth_date: Faker::Date.between(from: '2014-09-23', to: '2019-09-25'),
                       category: 'dog')
   animal.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')

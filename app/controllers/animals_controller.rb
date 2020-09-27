@@ -40,7 +40,7 @@ class AnimalsController < ApplicationController
   private
 
   def set_animal
-    @animal = Animal.find(params[:id])
+    @animal = Animal.friendly.find(params[:id])
   end
 
   def animal_params
