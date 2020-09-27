@@ -6,6 +6,7 @@ class AnimalsTest < ApplicationSystemTestCase
 
     assert_selector 'h2', text: 'Animals available'
     assert_selector '.card-product', count: (Animal.count - Adoption.count)
+    save_and_open_screenshot
   end
 
   test 'creating a new animal' do
@@ -23,5 +24,12 @@ class AnimalsTest < ApplicationSystemTestCase
     assert_equal animal_path('max'), page.current_path
     assert_text "Animal's Details"
     # save_and_open_screenshot
+  end
+
+  test 'reading informations of a animal' do
+    visit '/animals/1'
+    # save_and_open_screenshot
+
+    assert_selector 'h1', text: "Animal's Details"
   end
 end

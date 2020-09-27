@@ -2,9 +2,9 @@
 
 one:
   owner_name: 'Alexandre'
-  animal: one
+  animal_id: 2
 
 two:
   owner_name: 'Giovanna'
-  animal: two
+  animal_id: 3
 
