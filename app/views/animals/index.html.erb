@@ -17,7 +17,7 @@
             <div class="card-product">
               <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
               <div class="card-product-infos">
-                <h2><%= animal.name %></h2>
+                <h2><%= animal.name.capitalize %></h2>
                 <p><strong>Categoria:</strong> <%= animal.category %></p>
                 <p><strong>Professor:</strong> <%= animal.birth_date %></p>
                 <p><%= link_to "Details", animal_path(animal), class: "btn btn-primary" %></p>
