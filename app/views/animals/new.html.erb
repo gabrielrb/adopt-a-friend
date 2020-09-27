@@ -7,9 +7,9 @@
 
   <div>
     <%= simple_form_for(@animal) do |f| %>
-      <%= f.input :name, label: 'Name' %>
+      <%= f.input :name, label: 'Name', placeholder: 'Only downcase letters without special character (whitespace allowed)' %>
       <%= f.input :category, label: 'Category', collection: ['dog', 'cat', 'other'] %>
-      <%= f.input :birth_date, label: 'Birth Date', placeholder: 'Format must be: yyyy-mm-dd'  %>
+      <%= f.input :birth_date, label: 'Birth Date', placeholder: 'Format must be: yyyy-mm-dd' %>
       <%= f.input :photo, as: :file %>
       <div class="mb-5">
         <%= f.submit 'Add', class: 'btn btn-primary' %>
