@@ -5,6 +5,6 @@ class AnimalsTest < ApplicationSystemTestCase
     visit '/'
 
     assert_selector 'h2', text: 'Animals'
-
+    assert_selector '.card-product', count: (Animal.count - Adoption.count)
   end
 end
