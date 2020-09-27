@@ -5,5 +5,6 @@ class AnimalsTest < ApplicationSystemTestCase
     visit '/'
 
     assert_selector 'h2', text: 'Animals'
+
   end
 end
