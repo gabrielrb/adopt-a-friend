@@ -12,7 +12,7 @@
       <% if @animal.photo.present? %>
         <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <div class ="d-flex justify-content-between flex-column pb-3">
+      <div class ="d-flex justify-content-between flex-column mt-3 pb-3">
         <h2 class="border-bottom"><%= @animal.name.capitalize %></h2>
         <ul>
           <li>Category: <%= @animal.category %></li>
