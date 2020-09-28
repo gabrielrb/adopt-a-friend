@@ -1,28 +1,26 @@
-<div class="container mt-4">
-  <div class="container pt-5">
-    <div class="d-flex justify-content-center">
-      <h2 class="mt-5">Animals available</h2>
-    </div>
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <h2 class="mt-5 border-bottom">Animals available</h2>
   </div>
   <br>
   <div>
     <%= link_to "New animal?", new_animal_path, class: "btn btn-secondary" %>
   </div>
   <br>
-  <div class="row">
+  <div class="d-flex align-content-start flex-wrap">
     <% if @animals.present? %>
       <% @animals.each do |animal| %>
         <% unless animal.adoption.present? %>
-          <div class="col-6 mb-3">
+          <div class="col-4 mb-3">
             <div class="card-product">
               <% if animal.photo.present? %>
                 <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
               <% end %>
               <div class="card-product-infos">
-                <h2><%= animal.name.capitalize %></h2>
-                <p><strong>Categoria:</strong> <%= animal.category %></p>
-                <p><strong>Professor:</strong> <%= animal.birth_date %></p>
-                <p><%= link_to "Details", animal_path(animal), class: "btn btn-primary" %></p>
+                <h2 class="border-bottom"><%= animal.name.capitalize %></h2>
+                <p><strong>Category:</strong> <%= animal.category %></p>
+                <p><strong>Birth Date:</strong> <%= animal.birth_date %></p>
+                <p><%= link_to "Details", animal_path(animal), class: "btn btn-warning w-100" %></p>
               </div>
             </div>
           </div>

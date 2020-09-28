@@ -1,0 +1,21 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-animal">
+  <%= link_to "root_path", class: "navbar-brand" do %>
+    <%= image_tag "logo-colorido.jpg" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="pr-3 nav-item active">
+        <%= link_to "Home", root_path, class: "nav-link text-light" %>
+      </li>
+      <li class="pr-3 nav-item">
+        <%= link_to "Adoptions", "#", class: "nav-link text-light" %>
+      </li>
+    </ul>
+  </div>
+</div>

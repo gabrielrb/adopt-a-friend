@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <div class="container pt-5">
+  <div class="container">
     <div class="d-flex justify-content-center">
       <h1 class="mt-5 border-bottom">Animal's Details</h1>
     </div>
@@ -12,7 +12,7 @@
       <% if @animal.photo.present? %>
         <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-      <div class ="d-flex justify-content-between flex-column pb-3">
+      <div class ="d-flex justify-content-between flex-column mt-3 pb-3">
         <h2 class="border-bottom"><%= @animal.name.capitalize %></h2>
         <ul>
           <li>Category: <%= @animal.category %></li>
@@ -21,7 +21,7 @@
         <div>
           <%= link_to "Edit animal", edit_animal_path, class: "btn btn-primary" %>
           <%= link_to "Back to animals", animals_path, class: "btn btn-primary" %>
-          <%= link_to "Delete animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          <%= link_to "Delete animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
         </div>
         <% if @animal.adoption.present? %>
           <div class="mt-4">
