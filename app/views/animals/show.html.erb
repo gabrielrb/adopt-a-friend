@@ -21,7 +21,7 @@
         <div>
           <%= link_to "Edit animal", edit_animal_path, class: "btn btn-primary" %>
           <%= link_to "Back to animals", animals_path, class: "btn btn-primary" %>
-          <%= link_to "Delete animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          <%= link_to "Delete animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
         </div>
         <% if @animal.adoption.present? %>
           <div class="mt-4">
