@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <div class="container pt-5">
     <div class="d-flex justify-content-center">
-      <h2 class="mt-5">Animais Disponíveis</h2>
+      <h2 class="mt-5">Animals available</h2>
     </div>
   </div>
   <br>
@@ -15,9 +15,11 @@
         <% unless animal.adoption.present? %>
           <div class="col-6 mb-3">
             <div class="card-product">
-              <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+              <% if animal.photo.present? %>
+                <%= cl_image_tag animal.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
               <div class="card-product-infos">
-                <h2><%= animal.name %></h2>
+                <h2><%= animal.name.capitalize %></h2>
                 <p><strong>Categoria:</strong> <%= animal.category %></p>
                 <p><strong>Professor:</strong> <%= animal.birth_date %></p>
                 <p><%= link_to "Details", animal_path(animal), class: "btn btn-primary" %></p>

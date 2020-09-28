@@ -1,11 +1,31 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  birth_date: MyString
-  category:
+  id: 1
+  name: 'bob'
+  birth_date: '1991-12-12'
+  category: 'dog'
 
 two:
-  name: MyString
-  birth_date: MyString
-  category:
+  id: 2
+  name: 'antonio carlos'
+  birth_date: '2010-02-12'
+  category: 'other'
+
+three:
+  id: 3
+  name: 'zequinha'
+  birth_date: '2010-02-11'
+  category: 'cat'
+
+four:
+  id: 4
+  name: 'juca'
+  birth_date: '2010-02-11'
+  category: 'dog'
+
+five:
+  id: 5
+  name: 'louro'
+  birth_date: '2010-02-11'
+  category: 'other'
