@@ -1,6 +1,6 @@
 <div class="container">
   <div class="d-flex justify-content-center">
-    <h2 class="mt-5">Animals available</h2>
+    <h2 class="mt-5 border-bottom">Animals available</h2>
   </div>
   <br>
   <div>
@@ -18,8 +18,8 @@
               <% end %>
               <div class="card-product-infos">
                 <h2 class="border-bottom"><%= animal.name.capitalize %></h2>
-                <p><strong>Categoria:</strong> <%= animal.category %></p>
-                <p><strong>Professor:</strong> <%= animal.birth_date %></p>
+                <p><strong>Category:</strong> <%= animal.category %></p>
+                <p><strong>Birth Date:</strong> <%= animal.birth_date %></p>
                 <p><%= link_to "Details", animal_path(animal), class: "btn btn-warning w-100" %></p>
               </div>
             </div>
