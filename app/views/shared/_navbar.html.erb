@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-animal">
-  <%= link_to "root_path", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo-colorido.jpg" %>
   <% end %>
 
@@ -14,7 +14,7 @@
         <%= link_to "Home", root_path, class: "nav-link text-light" %>
       </li>
       <li class="pr-3 nav-item">
-        <%= link_to "Adoptions", "#", class: "nav-link text-light" %>
+        <%= link_to "Adoptions", adoptions_path, class: "nav-link text-light" %>
       </li>
     </ul>
   </div>

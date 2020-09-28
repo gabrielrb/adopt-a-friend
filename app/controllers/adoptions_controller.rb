@@ -1,4 +1,8 @@
 class AdoptionsController < ApplicationController
+  def index
+    @adoptions = Adoption.all
+  end
+
   def create
     @animal = Animal.friendly.find(params[:animal_id])
     @adoption = Adoption.new(adoption_params)

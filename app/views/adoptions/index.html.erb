@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <h2 class="mt-5 border-bottom">All Adoptions</h2>
+  </div>
+  <br>
+  <div class="d-flex align-content-start flex-wrap">
+    <% if @adoptions.present? %>
+      <% @adoptions.each do |adoption| %>
+          <div class="col-4 mb-3">
+            <div class="card-product">
+              <% if adoption.animal.photo.present? %>
+                <%= cl_image_tag adoption.animal.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+              <div class="card-product-infos">
+                <h2 class="border-bottom"><%= adoption.animal.name.capitalize %></h2>
+                <p><strong>Category:</strong> <%= adoption.animal.category %></p>
+                <p><strong>Birth Date:</strong> <%= adoption.animal.birth_date %></p>
+                <p><%= link_to "Details", animal_path(adoption.animal), class: "btn btn-warning w-100" %></p>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

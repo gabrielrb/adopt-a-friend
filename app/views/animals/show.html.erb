@@ -1,37 +1,33 @@
-<div class="container mt-4">
-  <div class="container">
-    <div class="d-flex justify-content-center">
-      <h1 class="mt-5 border-bottom">Animal's Details</h1>
-    </div>
-  </div>
-
-<br>
-
-  <div class="d-flex justify-content-center">
-    <div>
+<div class="d-flex justify-content-center">
+  <div>
+    <h1 class="mt-5 border-bottom text-center">Animal's Details</h1>
+  <br>
+    <div class="justify-content-center">
       <% if @animal.photo.present? %>
-        <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @animal.photo.key, crop: :fill, class: "animal-photo mx-auto d-block" %>
       <% end %>
-      <div class ="d-flex justify-content-between flex-column mt-3 pb-3">
+      <div class="d-flex justify-content-around flex-column mt-3 pb-3">
         <h2 class="border-bottom"><%= @animal.name.capitalize %></h2>
-        <ul>
-          <li>Category: <%= @animal.category %></li>
-          <li>Birth Date: <%= @animal.birth_date %></li>
-        </ul>
         <div>
-          <%= link_to "Edit animal", edit_animal_path, class: "btn btn-primary" %>
-          <%= link_to "Back to animals", animals_path, class: "btn btn-primary" %>
-          <%= link_to "Delete animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
-        </div>
-        <% if @animal.adoption.present? %>
-          <div class="mt-4">
-            <h2 class="border-bottom"> Owner: <%= @animal.adoption.owner_name %></h2>
-            <ul>
-              <li> <strong>Adoption Date:</strong> <%= @animal.adoption.created_at.strftime("%Y-%m-%d") %></li>
-            </ul>
+          <ul>
+            <li> <strong>Category:</strong> <%= @animal.category %></li>
+            <li><strong>Birth Date:</strong> <%= @animal.birth_date %></li>
+          </ul>
+          <% if @animal.adoption.present? %>
+            <div>
+              <h4 class="border-bottom"> <strong>Owner:</strong> <%= @animal.adoption.owner_name %></h4>
+              <ul>
+                <li> <strong>Adoption Date:</strong> <%= @animal.adoption.created_at.strftime("%Y-%m-%d") %></li>
+              </ul>
+            </div>
+          <% end %>
+          <div class="row justify-content-around">
+            <%= link_to "Edit animal", edit_animal_path, class: "btn btn-primary col-5" %>
+            <%= link_to "Delete animal", animal_path(@animal), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning col-5" %>
           </div>
-        <% else %>
-          <div class="mt-4">
+        </div>
+        <% unless @animal.adoption.present?%>
+          <div>
             <%= render 'adoptions/new', animal: @animal, adoption: @adoption %>
           </div>
         <% end %>
