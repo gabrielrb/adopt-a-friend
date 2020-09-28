@@ -70,15 +70,18 @@ class AnimalsTest < ApplicationSystemTestCase
     # save_and_open_screenshot
   end
 
-# test 'delete a animal' do
-  #   visit '/animals/4'
-  #   # save_and_open_screenshot
+  test 'delete a animal' do
+    visit '/animals/4'
+    # save_and_open_screenshot
+    animal_count = Animal.count
+    accept_confirm 'Are you sure?' do
+      click_on 'Delete animal'
+    end
+    # save_and_open_screenshot
 
-  #   click_on 'Delete Animal'
-  #   # save_and_open_screenshot
+    assert_text 'animal was successfully deleted'
 
-  #   assert_equal animals_path, page.current_path
-  #   assert_text 'Animals available'
-  #   # save_and_open_screenshot
-  # end
+    assert_equal (animal_count - 1), Animal.count
+    # save_and_open_screenshot
+  end
 end
