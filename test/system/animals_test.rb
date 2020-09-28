@@ -1,7 +1,7 @@
 require 'application_system_test_case'
 
 class AnimalsTest < ApplicationSystemTestCase
-  test 'visiting the index' do
+  test 'visiting the index of animals' do
     visit '/'
 
     assert_selector 'h2', text: 'Animals available'
@@ -59,6 +59,14 @@ class AnimalsTest < ApplicationSystemTestCase
 
     assert_equal animal_path(5), page.current_path
     assert_text "Animal's Details"
+    # save_and_open_screenshot
+  end
+
+  test 'visiting the index of adoptions' do
+    visit adoptions_path
+
+    assert_selector 'h2', text: 'All Adoptions'
+    assert_selector '.card-product', count: Adoption.count
     # save_and_open_screenshot
   end
 
