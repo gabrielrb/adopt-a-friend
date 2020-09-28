@@ -4,7 +4,7 @@
 <%= simple_form_for [@animal, @adoption] do |f| %>
   <%= f.input :owner_name, label: 'New Owner' %>
   <div class="mb-5">
-    <%= f.submit 'ADOPT!', data: { confirm: 'Are you sure?' }, class: 'btn btn-primary w-100' %>
+    <%= f.submit 'ADOPT!', class: 'btn btn-primary w-100' %>
   </div>
 <% end %>
 
