@@ -62,7 +62,7 @@ class AnimalsTest < ApplicationSystemTestCase
     # save_and_open_screenshot
   end
 
-  # test 'delete a animal' do
+# test 'delete a animal' do
   #   visit '/animals/4'
   #   # save_and_open_screenshot
 
