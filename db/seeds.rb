@@ -11,7 +11,7 @@ Animal.destroy_all
 
 puts 'Start'
 
-3.times do
+15.times do
   sleep(1)
   file = URI.open('https://source.unsplash.com/600x600/?cat')
   animal = Animal.new(name: Faker::Creature::Cat.name.downcase,
@@ -21,7 +21,7 @@ puts 'Start'
   animal.save!
 end
 
-3.times do
+15.times do
   sleep(1)
   file = URI.open('https://source.unsplash.com/600x600/?dog')
   animal = Animal.new(name: Faker::Creature::Dog.name.downcase,
