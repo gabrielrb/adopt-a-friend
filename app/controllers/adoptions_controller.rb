@@ -1,6 +1,6 @@
 class AdoptionsController < ApplicationController
   def index
-    @adoptions = Adoption.all
+    @adoptions = Adoption.all.order(:created_at).page params[:page]
   end
 
   def create
