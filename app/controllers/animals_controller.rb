@@ -2,7 +2,7 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
 
   def index
-    @animals = Animal.all
+    @animals = Animal.all.order(:created_at).page params[:page]
   end
 
   def show
